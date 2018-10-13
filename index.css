@@ -1,0 +1,11 @@
+.multiColumn {
+  column-count: 4;
+}
+body {
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+}
+h1, h2, h3, ul {
+  margin-top: 0;
+}
