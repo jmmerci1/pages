@@ -4,10 +4,208 @@
               <meta charset="UTF-8">
               <link rel='icon' href='https://webp.svsu.edu/~gpcorser/images/cis255logo.png' type='image/png' />
               <title>Joshua Mercier (jmmerci1) prog03</title>
-      		    <link rel="stylesheet" type="text/css" href="prog03.css">
+      		<link rel="stylesheet" type="text/css" href="prog03.css">
        </head>
        
        <body>
-              <p>This is just a skeleton of what will be prog03.</p>
+              <form oninput="q1HometeamScore.value=(parseInt(q1ht1.value)*1) + (parseInt(q1ht2.value)*2) + (parseInt(q1h3.value)*3);
+                             q1AwayteamScore.value=(parseInt(q1at1.value)*1) + (parseInt(q1at2.value)*2) + (parseInt(q1at3.value)*3)">
+                     <fieldset>
+                            <legend>Basketball Team Scores</legend>
+                            <table>
+                                   <tr>
+                                          <td>
+                                          </td>
+                                          <td>
+                                                 <h1 id="homeTeam">Home Team</h1>
+                                          </td>
+                                          <td>
+                                                 <h1 id="awayTeam">Away Team</h1>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>1st Quarter</h3>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of One Pointers</p>
+                                          </td>
+                                          <td>
+                                                 <input type="number" name="hometeamScore" id="q1ht1" value="0">
+                                          </td>
+                                          <td>
+                                                 <input type="number" name="awayteamScore" id="q1at1" value="0">
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Two Pointers</p>
+                                          </td>
+                                          <td>
+                                                 <input type="number" name="hometeamScore" id="q1ht2" value="0">
+                                          </td>
+                                          <td>
+                                                 <input type="number" name="awayteamScore" id="q1at2" value="0">
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Three Pointers</p>
+                                          </td>
+                                          <td>
+                                                 <input type="number" name="hometeamScore" id="q1ht3" value="0">
+                                          </td>
+                                          <td>
+                                                 <input type="number" name="awayteamScore" id="q1at3" value="0">
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>1st Quarter Total<h3>
+                                          </td>
+                                          <td>
+                                                <output name="q1HometeamScore" for="q1ht1 q1ht2 q1ht3"></output> 
+                                          </td>
+                                          <td>
+                                                 <output name="q1AwayteamScore" for="q1at1 q1at2 q1at3"></output> 
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>2nd Quarter</h3>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of One Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Two Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Three Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>2nd Quarter Total<h3>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>3rd Quarter</h3>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of One Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Two Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Three Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>3rd Quarter Total<h3>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>4th Quarter</h3>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of One Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Two Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <p># of Three Pointers</p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h3>4th Quarter Total<h3>
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>
+                                   <tr>
+                                          <td>
+                                                 <h2>Game Finale Total
+                                          </td>
+                                          <td>
+                                          </td>
+                                          <td>
+                                          </td>
+                                   </tr>                     
+                            </table>
+                     </fieldset>
+              </form>
        </body>
 </html>
