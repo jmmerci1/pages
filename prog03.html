@@ -8,8 +8,16 @@
        </head>
        
        <body>
-              <form oninput="q1HometeamScore.value=(parseInt(q1ht1.value)*1) + (parseInt(q1ht2.value)*2) + (parseInt(q1h3.value)*3);
-                             q1AwayteamScore.value=(parseInt(q1at1.value)*1) + (parseInt(q1at2.value)*2) + (parseInt(q1at3.value)*3)">
+              <form oninput="q1htScore.value=(parseInt(q1ht1.value)*1) + (parseInt(q1ht2.value)*2) + (parseInt(q1ht3.value)*3);
+                             q1atScore.value=(parseInt(q1at1.value)*1) + (parseInt(q1at2.value)*2) + (parseInt(q1at3.value)*3);
+                             q2htScore.value=(parseInt(q2ht1.value)*1) + (parseInt(q2ht2.value)*2) + (parseInt(q2ht3.value)*3);
+                             q2atScore.value=(parseInt(q2at1.value)*1) + (parseInt(q2at2.value)*2) + (parseInt(q2at3.value)*3);
+                             q3htScore.value=(parseInt(q3ht1.value)*1) + (parseInt(q3ht2.value)*2) + (parseInt(q3ht3.value)*3);
+                             q3atScore.value=(parseInt(q3at1.value)*1) + (parseInt(q3at2.value)*2) + (parseInt(q3at3.value)*3);
+                             q4htScore.value=(parseInt(q4ht1.value)*1) + (parseInt(q4ht2.value)*2) + (parseInt(q4ht3.value)*3);
+                             q4atScore.value=(parseInt(q4at1.value)*1) + (parseInt(q4at2.value)*2) + (parseInt(q4at3.value)*3);
+                             finaleHomeScore.value= parseInt(q1htScore.value) + parseInt(q2htScore.value) + parseInt(q3htScore.value) + parseInt(q4htScore.value);
+                             finaleAwayScore.value= parseInt(q1atScore.value) + parseInt(q2atScore.value) + parseInt(q3atScore.value) + parseInt(q4atScore.value)">
                      <fieldset>
                             <legend>Basketball Team Scores</legend>
                             <table>
@@ -63,13 +71,13 @@
                                    </tr>
                                    <tr>
                                           <td>
-                                                 <h3>1st Quarter Total<h3>
+                                                 <h3>1st Quarter Total</h3>
                                           </td>
                                           <td>
-                                                <output name="q1HometeamScore" for="q1ht1 q1ht2 q1ht3"></output> 
+                                                 <output name="q1htScore" for="q1ht1 q1ht2 q1ht3"></output> 
                                           </td>
                                           <td>
-                                                 <output name="q1AwayteamScore" for="q1at1 q1at2 q1at3"></output> 
+                                                 <output name="q1atScore" for="q1at1 q1at2 q1at3"></output> 
                                           </td>
                                    </tr>
                                    <tr>
@@ -82,8 +90,10 @@
                                                  <p># of One Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q2ht1" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q2at1" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -91,8 +101,10 @@
                                                  <p># of Two Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q2ht2" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q2at2" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -100,8 +112,10 @@
                                                  <p># of Three Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q2ht3" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q2at3" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -109,8 +123,10 @@
                                                  <h3>2nd Quarter Total<h3>
                                           </td>
                                           <td>
+                                                 <output name="q2htScore" for="q2ht1 q2ht2 q2ht3"></output> 
                                           </td>
                                           <td>
+                                                 <output name="q2atScore" for="q2at1 q2at2 q2at3"></output> 
                                           </td>
                                    </tr>
                                    <tr>
@@ -123,8 +139,10 @@
                                                  <p># of One Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q3ht1" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q3at1" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -132,8 +150,10 @@
                                                  <p># of Two Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q3ht2" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q3at2" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -141,8 +161,10 @@
                                                  <p># of Three Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q3ht3" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q3at3" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -150,8 +172,10 @@
                                                  <h3>3rd Quarter Total<h3>
                                           </td>
                                           <td>
+                                                 <output name="q3htScore" for="q3ht1 q3ht2 q3ht3"></output> 
                                           </td>
                                           <td>
+                                                 <output name="q3atScore" for="q3at1 q3at2 q3at3"></output> 
                                           </td>
                                    </tr>
                                    <tr>
@@ -164,8 +188,10 @@
                                                  <p># of One Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q4ht1" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q4at1" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -173,8 +199,10 @@
                                                  <p># of Two Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q4ht2" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q4at2" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -182,8 +210,10 @@
                                                  <p># of Three Pointers</p>
                                           </td>
                                           <td>
+                                                 <input type="number" name="hometeamScore" id="q4ht3" value="0">
                                           </td>
                                           <td>
+                                                 <input type="number" name="awayteamScore" id="q4at3" value="0">
                                           </td>
                                    </tr>
                                    <tr>
@@ -191,17 +221,21 @@
                                                  <h3>4th Quarter Total<h3>
                                           </td>
                                           <td>
+                                                 <output name="q4htScore" for="q4ht1 q4ht2 q4ht3"></output> 
                                           </td>
                                           <td>
+                                                 <output name="q4atScore" for="q4at1 q4at2 q4at3"></output> 
                                           </td>
                                    </tr>
                                    <tr>
                                           <td>
                                                  <h2>Game Finale Total
                                           </td>
-                                          <td>
+                                           <td>
+                                                 <output name="finaleHomeScore" for="q1htScore q2htScore q3htScore q4htScore"></output> 
                                           </td>
                                           <td>
+                                                 <output name="finaleAwayScore" for="q1atScore q2atScore q3atScore q4atScore"></output> 
                                           </td>
                                    </tr>                     
                             </table>
