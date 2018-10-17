@@ -13,9 +13,9 @@ h2,h3{
 }
 
 input {
-	border-radius: 1em;
+	border-radius: 16px;
 	text-align: center;
-  width: 3em;
+  width: 48px;
 }
 
 td {
@@ -37,20 +37,20 @@ td.tHomeScore {
   font-weight: bold;
 }
 
-td.tAway.Score {
+td.tAwayScore {
   color: red;
   font-weight: bold;
 }
 
 legend {
-	font-size: 3em;
+	font-size: 48px;
 	text-align: center;
 }
 
 fieldset {
-	width: 27em;
-	border-radius: 3em;
-	background-color: lightblue;
+	width: 432px;
+	border-radius: 48px;
+	background-color: class="tHomeScore";
 }
 
 body {
