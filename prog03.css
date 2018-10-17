@@ -1,21 +1,27 @@
 h2,h3{
-  font-weight: bold;
+  	font-weight: bold;
 }
 
 #homeTeam {
-  color: blue;
-  font-weight: bold;
+  	color: blue;
+  	font-weight: bold;
+	text-decoration: overline;
+	text-shadow: 3px 2px blue;
+	font-family: Impact, Charcoal, sans-serif;
 }
 
 #awayTeam {
-  color: red;
-  font-weight: bold;
+  	color: red;
+  	font-weight: bold;
+	text-decoration: overline;
+	text-shadow: 3px 2px red;
+	font-family: Impact, Charcoal, sans-serif;
 }
 
 input {
-	border-radius: 16px;
-	text-align: center;
-  width: 48px;
+  	border-radius: 16px;
+  	text-align: center;
+  	width: 48px;
 }
 
 td {
@@ -33,13 +39,13 @@ td.finAwayScore {
 }
 
 td.tHomeScore {
-  color: blue;
-  font-weight: bold;
+	color: blue;
+	font-weight: bold;
 }
 
 td.tAwayScore {
-  color: red;
-  font-weight: bold;
+	color: red;
+	font-weight: bold;
 }
 
 legend {
@@ -50,7 +56,7 @@ legend {
 fieldset {
 	width: 432px;
 	border-radius: 48px;
-	background-color: class="tHomeScore";
+	background-color: rgb(84, 83, 82);
 }
 
 body {
