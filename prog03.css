@@ -1,12 +1,17 @@
-h2,h3{
+h2,h3 {
   	font-weight: bold;
+	text-align: right;
+}
+
+p {
+	text-align: right:
 }
 
 #homeTeam {
   	color: blue;
   	font-weight: bold;
 	text-decoration: overline;
-	text-shadow: 3px 2px blue;
+	text-shadow: 1px 1px blue;
 	font-family: Impact, Charcoal, sans-serif;
 }
 
@@ -14,7 +19,7 @@ h2,h3{
   	color: red;
   	font-weight: bold;
 	text-decoration: overline;
-	text-shadow: 3px 2px red;
+	text-shadow: 1px 1px red;
 	font-family: Impact, Charcoal, sans-serif;
 }
 
@@ -48,17 +53,23 @@ td.tAwayScore {
 	font-weight: bold;
 }
 
+table {
+	border-spacing: 3px;
+}
+
 legend {
-	font-size: 48px;
+	color: green;
+	font-size: 36px;
+	font-weight: bold;
 	text-align: center;
 }
 
 fieldset {
 	width: 432px;
 	border-radius: 48px;
-	background-color: rgb(84, 83, 82);
+	background-color: rgb(201, 123, 46);
 }
 
 body {
-	background-color: rgb(193, 181, 181);
+	background-color: rgb(50, 50, 50);
 }
