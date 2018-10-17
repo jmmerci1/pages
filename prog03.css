@@ -1,1 +1,58 @@
-WIP skeleton
+h2,h3{
+  font-weight: bold;
+}
+
+#homeTeam {
+  color: blue;
+  font-weight: bold;
+}
+
+#awayTeam {
+  color: red;
+  font-weight: bold;
+}
+
+input {
+	border-radius: 1em;
+	text-align: center;
+  width: 3em;
+}
+
+td {
+	text-align: center;
+}
+
+td.finHomeScore {
+	color: blue;
+	font-weight: bold;
+}
+
+td.finAwayScore {
+	color: red;
+	font-weight: bold;
+}
+
+td.tHomeScore {
+  color: blue;
+  font-weight: bold;
+}
+
+td.tAway.Score {
+  color: red;
+  font-weight: bold;
+}
+
+legend {
+	font-size: 3em;
+	text-align: center;
+}
+
+fieldset {
+	width: 27em;
+	border-radius: 3em;
+	background-color: lightblue;
+}
+
+body {
+	background-color: rgb(193, 181, 181);
+}
