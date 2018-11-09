@@ -77,10 +77,12 @@
 			  // precondition: inputWidth global variable must be set
 			  // precondition: call from addForm() so HTML element with id="fieldset1" exists
 
-			  addField("fieldset1", "fname", "First", "text", "Jane", inputWidth);
-			  addField("fieldset1", "lname", "Last", "text", "Doe", inputWidth);
-			  addField("fieldset1", "age", "Age", "number", "18", inputWidth);
-			  addField("fieldset1", "country", "Country", "text", "USA", inputWidth);
+			  addField("fieldset1", "gname", "Given Name:", "text", "Jane", inputWidth);
+			  addField("fieldset1", "sname", "Surname:", "text", "Doe", inputWidth);
+			  addField("fieldset1", "bday", "Solar Birth Day:", "number", "1", inputWidth);
+			  addField("fieldset1", "bmonth", "Solar Birth Month:", "number", "1", inputWidth);
+			  addField("fieldset1", "byear", "Solar Birth Year:", "number", "1900", inputWidth);
+			  addField("fieldset1", "country", "Country:", "text", "USA", inputWidth);
 			  var newelement = document.createElement("br");
 			  var fieldset1 = document.getElementById("fieldset1");
 			  fieldset1.appendChild(newelement);
@@ -126,9 +128,11 @@
 			  // generate objArray from HTML form elements
 			  for(i = 0; i < currentLine; i++) {
 			    objArray[i] = {
-			      'fname'     :document.getElementById("fname"+i).value,
-			      'lname'     :document.getElementById("lname"+i).value,
-			      'age'       :parseInt(document.getElementById("age"+i).value)?parseInt(document.getElementById("age"+i).value):0, 
+			      'gname'     :document.getElementById("gname"+i).value,
+			      'sname'     :document.getElementById("sname"+i).value,
+			      'bday'      :parseInt(document.getElementById("bday"+i).value)?parseInt(document.getElementById("bday"+i).value):0,
+			      'bmonth'    :parseInt(document.getElementById("bmonth"+i).value)?parseInt(document.getElementById("bmonth"+i).value):0,
+			      'byear'     :parseInt(document.getElementById("byear"+i).value)?parseInt(document.getElementById("byear"+i).value):0, 
 			      'country'   :document.getElementById("country"+i).value,
 			      'countryAge':function () {
 				if('China'==this.country)
