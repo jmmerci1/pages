@@ -16,7 +16,7 @@
 		<br />
 		<br />
 		
-		<div id="div1">
+		<div id="inputSection">
 		</div>
 		
 		<button type="button" onclick="genObjectArray();">Generate and Display Array of Objects</button>
@@ -42,16 +42,16 @@
 			// FUNCTIONS
 
 			/* addForm()
-			 * appends an entry form to an HTML element with id="div1"
+			 * appends an entry form to an HTML element with id="inputSection"
 			 */
 			function addForm() {
-			  // precondition: HTML must contain <div id="div1"> element
+			  // precondition: HTML must contain <div id="inputSection"> element
 
-			  // create a new form element, and append to div1
+			  // create a new form element, and append to inputSection
 			  var newelement = document.createElement("form");
 			  newelement.setAttribute("id","form1");
-			  var div1 = document.getElementById("div1");
-			  div1.appendChild(newelement);
+			  var inputSection = document.getElementById("inputSection");
+			  inputSection.appendChild(newelement);
 
 			  // create a new fieldset element, and append to form1
 			  var newelement = document.createElement("fieldset");
@@ -66,37 +66,8 @@
 			  var fieldset1 = document.getElementById("fieldset1");
 			  fieldset1.appendChild(newelement);
 
-			  // create a new label element, and append to fieldset1
-			  var newelement = document.createElement("label");
-			  newelement.setAttribute("for","fname"+currentLine);
-			  var textnode = document.createTextNode("First");
-			  newelement.appendChild(textnode);
-			  var fieldset1 = document.getElementById("fieldset1");
-			  fieldset1.appendChild(newelement);
-
-			  // create a new input element, and append to fieldset1
-			  var newelement = document.createElement("input");
-			  newelement.setAttribute("name","fname"+currentLine);
-			  newelement.setAttribute("id","fname"+currentLine);
-			  newelement.setAttribute("type","text");
-			  newelement.setAttribute("placeholder","Jane");
-			  newelement.setAttribute("size",10);
-			  if (currentLine==0) newelement.setAttribute("autofocus","autofocus");
-			  var fieldset1 = document.getElementById("fieldset1");
-			  fieldset1.appendChild(newelement);
-
-			  // add more fields 
-			  addField("fieldset1", "lname", "Last", "text", "Doe", inputWidth);
-			  addField("fieldset1", "age", "Age", "number", "18", inputWidth);
-			  addField("fieldset1", "country", "Country", "text", "USA", inputWidth);
-
-			  // add line break 
-			  var newelement = document.createElement("br");
-			  var fieldset1 = document.getElementById("fieldset1");
-			  fieldset1.appendChild(newelement);
-
-			  // increment line counter
-			  currentLine++;
+			  // creates first line for the form
+              		  addLine();
 			}
 
 			/* addLine()
