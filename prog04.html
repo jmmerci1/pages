@@ -67,7 +67,7 @@
 			  fieldset1.appendChild(newelement);
 
 			  // creates first line for the form
-              addLine();
+              		  addLine();
 			}
 
 			/* addLine()
@@ -82,8 +82,8 @@
 			  addMinMaxField("fieldset1", "bday", "Solar Birth Day:", "number", 1, 31, "1", inputWidth);
 			  addMinMaxField("fieldset1", "bmonth", "Solar Birth Month:", "number", 1, 12, "1", inputWidth);
 			  addMinMaxField("fieldset1", "byear", "Solar Birth Year:", "number", 1900, 2018, "1900", inputWidth);
-			  addField("fieldset1", "country", "Country:", "text", "USA", inputWidth);
-			  //addCountryDbx("fieldset1", "country", "Country:", "USA", "China");
+			  //addField("fieldset1", "country", "Country:", "text", "USA", inputWidth);
+			  addCountryDbx("fieldset1", "country", "Country:", "USA", "China");
 			  var newelement = document.createElement("br");
 			  var fieldset1 = document.getElementById("fieldset1");
 			  fieldset1.appendChild(newelement);
@@ -151,16 +151,15 @@
 			  var f = document.getElementById(formId);
 			  f.appendChild(n);
 			  
-			  var n = document.createElement("input");
+			  var n = document.createElement("select");
 			  n.setAttribute("id",namePrefix+currentLine);
 			  var o1 = document.createElement("option")
 			  o1.setAttribute("value", country1);
+             		  o1.appendChild(document.createTextNode(country1));
+              		  n.appendChild(o1);
 			  var o2 = document.createElement("option")
 			  o2.setAttribute("value", country2);
-			   
-			  o1.appendChild(document.createTextNode(country1));
-			  n.appendChild(o1);
-			  o2.appendChild(document.createTextNode(country2));
+              		  o2.appendChild(document.createTextNode(country2));
 			  n.appendChild(o2);
 			  document.getElementById(formId).appendChild(n);
 			
@@ -212,4 +211,5 @@
 		</script>	
 	</body>
 </html>
+
 
