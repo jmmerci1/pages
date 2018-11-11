@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -28,13 +29,13 @@
 					<div id="inputSection">
 					</div>
 					
-					<button type="button" onclick="genObjectArray();">Generate Array of Objects</button>
+					<button type="button" onclick="genObjectArray();">Generate and Display Array of Objects</button>
 					<br />
 					
 					<div id="div2">
 					</div>
 					
-					<button type="button" onclick="">Generate and Display Table</button>
+					<button type="button" onclick="genPeopleTable();">Generate and Display Table</button>
 					<br />
 					<br />
 					
@@ -85,7 +86,7 @@
 			  fieldset1.appendChild(newelement);
 
 			  // creates first line for the form
-              		  addLine();
+              addLine();
 			}
 
 			/* addLine()
@@ -173,11 +174,11 @@
 			  n.setAttribute("id",namePrefix+currentLine);
 			  var o1 = document.createElement("option")
 			  o1.setAttribute("value", country1);
-              		  o1.appendChild(document.createTextNode(country1));
-              		  n.appendChild(o1);
+              o1.appendChild(document.createTextNode(country1));
+              n.appendChild(o1);
 			  var o2 = document.createElement("option")
 			  o2.setAttribute("value", country2);
-              		  o2.appendChild(document.createTextNode(country2));
+              o2.appendChild(document.createTextNode(country2));
 			  n.appendChild(o2);
 			  document.getElementById(formId).appendChild(n);
 			
@@ -198,8 +199,8 @@
 			      'gname'     		:document.getElementById("gname"+i).value,
 			      'sname'     		:document.getElementById("sname"+i).value,
 			      'bday'      		:document.getElementById("bday"+i).value,
-			      'bmonth'    		:document.getElementById("bmonth"+i).value,
-			      'byear'     		:document.getElementById("byear"+i).value, 
+				  'bmonth'    		:document.getElementById("bmonth"+i).value,
+				  'byear'     		:document.getElementById("byear"+i).value, 
 			      'country'   		:document.getElementById("country"+i).value,
 			      'countryBirthday' :function () {
 					if(this.country == "China")
@@ -327,6 +328,8 @@
 			  }
 			  
 			  arrayGen = true; // Array has now been generated thus true
+
+			  
 			  
 			  // display objArray
 			  var divContent = "<ol start='0'>";
@@ -341,6 +344,24 @@
 			  });
 			  divContent += "</ol>";
 			  document.getElementById("div2").innerHTML = divContent;
+			}
+			
+			function genPeopleTable() {
+				if(arrayGen == false)
+					document.getElementById("div3").innerHTML = "<h3>Error. Please generate array of objects first.</h3>";
+				else {
+					var tableString = "<table class ='table-stripped'> <thead>";
+					tableString += "<tr> <th>Local Name</th> <th>Local DOB</th> <th>Local Age</th> <th>Local Zodiac</th></tr> </thead>";
+					tableString += "<tbody>";
+					for(i = 0; i < currentLine; i++) {
+						tableString += "<tr><td>" + objArray[i].countryName() + "</td>";
+						tableString += "<td>" + objArray[i].countryBirthday() + "</td>";
+						tableString += "<td>" + objArray[i].age() + "</td>";
+						tableString += "<td>" + objArray[i].zodiac() + "</td></tr>";
+					}
+					tableString += "</tbody></table>";
+					document.getElementById("div3").innerHTML = tableString;
+				}
 			}
 
 			/* genTable()
