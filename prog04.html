@@ -1,36 +1,53 @@
-
 <!doctype html>
 <html lang="en">
 
 	<head>
 	    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Prog04">
+		<meta name="author" content="Joshua Mercier">
+
 	    <link rel='icon' href='https://webp.svsu.edu/~gpcorser/images/cis255logo.png' type='image/png' />
 	    <title>Prog04 - Joshua Mercier(jmmerci1)</title>
-	    <link rel="stylesheet" type="text/css" href="prog04.css">
+	    
+		<!-- Bootstrap core CSS -->
+		<link href="bare/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 	</head>
 
 	<body onload="addForm();">
-    		<h1>Prog04- Joshua Mercier (jmmerci1)</h1>
-    
-		<button type="button" onclick="addLine();">Add Line</button>
-		<br />
-		<br />
-		
-		<div id="inputSection">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-left">
+					<h1>Prog04- Joshua Mercier (jmmerci1)</h1>
+				
+					<button type="button" onclick="addLine();">Add Line</button>
+					<br />
+					<br />
+					
+					<div id="inputSection">
+					</div>
+					
+					<button type="button" onclick="genObjectArray();">Generate Array of Objects</button>
+					<br />
+					
+					<div id="div2">
+					</div>
+					
+					<button type="button" onclick="">Generate and Display Table</button>
+					<br />
+					<br />
+					
+					<div id="div3">
+					</div>
+				</div>
+			</div>
 		</div>
 		
-		<button type="button" onclick="genObjectArray();">Generate Array of Objects</button>
-		<br />
-		
-		<div id="div2">
-		</div>
-		
-		<button type="button" onclick="">Generate and Display Table</button>
-		<br />
-		<br />
-		
-		<div id="div3">
-		</div>
+		<!-- Bootstrap core JavaScript -->
+		<script src="bare/vendor/jquery/jquery.min.js"></script>
+		<script src="bare/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 		<script>
 		
 			// GLOBAL VARIABLES
@@ -310,8 +327,6 @@
 			  }
 			  
 			  arrayGen = true; // Array has now been generated thus true
-
-			  
 			  
 			  // display objArray
 			  var divContent = "<ol start='0'>";
@@ -319,9 +334,9 @@
 			    divContent += '<li>';
 			    divContent += JSON.stringify(objArray);
 			    divContent += 'countryBirthday() == ' + objArray.countryBirthday() + " ";
-			    divContent += 'countryName() == ' + objArray.countryName() + " ";
-			    divContent += 'Age == ' + objArray.age() + " ";
-			    divContent += 'Zodiac == ' + objArray.zodiac() + " ";
+				divContent += 'countryName() == ' + objArray.countryName() + " ";
+				divContent += 'Age == ' + objArray.age() + " ";
+				divContent += 'Zodiac == ' + objArray.zodiac() + " ";
 			    divContent += '</li>';
 			  });
 			  divContent += "</ol>";
