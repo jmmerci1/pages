@@ -1,0 +1,256 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Prog06">
+	<meta name="author" content="Joshua Mercier">
+
+	<link rel='icon' href='https://webp.svsu.edu/~gpcorser/images/cis255logo.png' type='image/png' />
+	<title>Prog06 - Joshua Mercier(jmmerci1)</title>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+	    
+	<!-- Bootstrap core CSS -->
+	<link href="bare/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prog06- Joshua Mercier (jmmerci1)</h1>
+
+        <button type="button" id = "addLineBtn">Add Line</button>
+		<br>
+        <div id="inputSection"></div>
+		<br>
+
+        <button type="button" id = "genObjectArrayBtn">Generate and Display Array of Objects</button>
+		<br>
+        <div id="objDisplay"></div>
+		<br>
+
+        <button type="button" id="genPeopleTableBtn">Generate and Display Table</button>
+		<br>
+		<div id="tableDisplay"></div>
+		<br>
+		
+		<div id="jQueryList">
+					<h2>jQuery vs JavaScript</h2>
+					<p>
+						<ol>
+							<li>jQuery can prevent any jQuery code from running until the document is finished loading with the $(document).ready(function()); event which can be placed in the header or anywhere really. JavaScript instead uses onload which must be placed inside the body tag.</li>
+							<li>jQuery uses selectors such as $ for elements, # for id's, and . for class's. Plain JavaScript must use a much more intensive amount of code to slect, such as i.e. document.getElementById() to grab an element of a certain Id.</li>
+							<li>jQuery can use events in the script to keep Javascript, such as using the onclick="" attribute in the button element, outside of the body. </li>
+							<li>jQuery can use .text() method to string out the entirety of an element, the text, html, values. Also allows for ease of setting values that JS would require more effort to do.</li>
+							<li>jQuery can retrieve CSS style properties with ease with the .css() method. JS takes a bit more code to do the same.</li>
+						</ol>
+					</p>
+		</div>
+    </div>
+
+    <script>
+		$(document).ready(function() {addForm();});
+		$("#addLineBtn").click(function(){addLine();});
+		$("#genObjectArrayBtn").click(function(){genObjectArray();});
+		$("#genPeopleTableBtn").click(function(){genPeopleTable();});
+	
+        var rowCount = 0
+        var objectArray = []
+		var arrayGen    = false;
+
+        function addForm() {
+            var form = $("#inputSection").append($("<form></form>").attr("id", "users-form"))
+            addLine()
+        }
+		
+        function addLine() {
+            var form = $("#users-form")
+            function genField(label, name, type, placeholder) {
+                var cell = $("<div></div>").addClass("col")
+                $("<label></label>").text(label).attr("for", name).appendTo(cell)
+                $("<input>")
+                    .addClass("form-control")
+                    .attr({
+                        type: "text",
+                        id: name,
+                        name: name,
+                        placeholder: placeholder
+                    })
+                    .appendTo(cell)
+                return cell
+            }
+
+            function genSelect(label, name, items) {
+                var cell = $("<div></div>").addClass("col")
+                $("<label></label>")
+                    .text(label)
+                    .attr("for", name)
+                    .appendTo(cell)
+                let select = $("<select></select>")
+                    .addClass("form-control")
+                    .attr("id", name)
+                    .appendTo(cell)
+
+                for (var i = 0; i < items.length; i++) {
+                    $("<option></option>")
+                        .text(items[i].text)
+                        .attr("value", items[i].value)
+                        .appendTo(select)
+                }
+                return cell
+            }
+			
+			function genMinMax(label, name, type, min, max, placeholder) {
+				var cell = $("<div></div>").addClass("col")
+				$("<label></label>").text(label).attr("for", name).appendTo(cell)
+                $("<input>")
+                    .addClass("form-control")
+                    .attr({
+                        type: "number",
+                        id: name,
+                        name: name,
+						min: min,
+						max: max,
+                        placeholder: placeholder
+                    })
+                    .appendTo(cell)
+                return cell
+			}
+
+            var row = $("<div></div>")
+                .addClass("form-row")
+                .attr("id", "form-row-" + rowCount)
+
+            row.append(genField("Given Name", "fname" + rowCount, "text", "Jane"))
+            row.append(genField("Surname", "sname" + rowCount, "text", "Doe"))
+            row.append(genMinMax("Solar Birth Day", "birthday" + rowCount, "number", 01, 31, "01"))
+            row.append(genMinMax("Solar Birth Month", "birthmonth" + rowCount, "number", 01, 12, "01"))
+            row.append(genMinMax("Solar Birth Year", "birthyear" + rowCount, "number", 1900, 2018, "1900"))
+            row.append(genSelect("Country", "country" + rowCount, [
+                { value: "USA", text: "USA" },
+                { value: "China", text: "China" }
+            ]))
+            form.append(row)
+            rowCount += 1
+        }
+
+        function genObjectArray() {
+            objectArray = []
+			
+            for (var i = 0; i < rowCount; i++) {
+                // Get values
+                let fName = $("#fname" + i).val()
+                let sName = $("#sname" + i).val()
+                let birthday = $("#birthday" + i).val()
+                let birthmonth = $("#birthmonth" + i).val()
+                let birthyear = $("#birthyear" + i).val()
+                let country = $("#country" + i).val()
+
+                // Push into array
+                let obj = {
+                    name: fName,
+                    surname: sName,
+                    birthDay: birthday,
+                    birthMonth: birthmonth,
+                    birthYear: birthyear,
+                    country: country
+                }
+                objectArray.push(obj)
+            }
+            let display = $("#objDisplay").html(displayObjects())
+			arrayGen = true;
+        }
+
+        function displayObjects() {
+            let output = '<ol start="0">'
+            for (var i = 0; i < objectArray.length; i++) {
+                let obj = objectArray[i]
+                output += '<li>' +  JSON.stringify(obj) + ',"calcZodiac()":"' + calcZodiac(obj.birthMonth, obj.birthDay, obj.birthYear, obj.country) + '"'
+                    + ',"localBDate()":"' + localBDate(obj.birthMonth, obj.birthDay, obj.birthYear, obj.country) + '"'
+                    + ',"solarAge()":"' + solarAge(obj.birthMonth, obj.birthDay, obj.birthYear, obj.country) + '"' + '</li>'
+            }
+			output += '</ol>'
+            return output
+        }
+
+        function calcZodiac(month, day, year, country) {
+			var zodiac = "n/a"
+			var zodiacChina = [
+				"Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox",
+				"Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat"
+			]
+			
+            var month = parseInt(month)
+            var day = parseInt(day)
+            year = parseInt(year)
+            if (country == "USA") {
+				if (month == 1 && day >=20 || month == 2 && day <=18) {zodiac = "Aquarius"}
+				if (month == 2 && day >=19 || month == 3 && day <=20) {zodiac = "Pisces"}
+				if (month == 3 && day >=21 || month == 4 && day <=19) {zodiac = "Aries"}
+				if (month == 4 && day >=20 || month == 5 && day <=20) {zodiac = "Taurus"}
+				if (month == 5 && day >=21 || month == 6 && day <=21) {zodiac = "Gemini"}
+				if (month == 6 && day >=22 || month == 7 && day <=22) {zodiac = "Cancer"}
+				if (month == 7 && day >=23 || month == 8 && day <=22) {zodiac = "Leo"}
+				if (month == 8 && day >=23 || month == 9 && day <=22) {zodiac = "Virgo"}
+				if (month == 9 && day >=23 || month == 10 && day <=22) {zodiac = "Libra"}
+				if (month == 10 && day >=23 || month == 11 && day <=21) {zodiac = "Scorpio"}
+				if (month == 11 && day >=22 || month == 12 && day <=21) {zodiac = "Sagittarius"}
+				if (month == 12 && day >=22 || month == 1 && day <=19) {zodiac = "Capricorn"}
+            } else {zodiac = zodiacChina[year % 12]}
+			return zodiac
+        }
+
+        function solarAge(month, day, year, country) {
+            bm = month
+            bd = day
+            by = year
+			
+			today = new Date()
+			cDay = parseInt(today.getDate())
+			cMonth = parseInt(today.getMonth())
+			cYear = parseInt(today.getFullYear())
+			
+			calcAge = cYear - by 
+			
+			if(cMonth <= bm) {
+				if(cMonth != bm){calcAge--}
+				if(cMonth == bm && cDay < bd){calcAge--}
+			}
+			if(country == "China"){calcAge++}
+			return calcAge
+		}
+
+        function localBDate(month, day, year, country) {
+            if (country == "USA") {return month + "-" + day + "-" + year} 
+			else {return year + "-" + month + "-" + day}
+        }
+		
+		function countryName(firstName, surName, country) {
+			if(country == "China"){return (surName + " " + firstName)}
+			else {return (firstName + " " + surName)}
+		}
+
+        function genPeopleTable() {
+			if(arrayGen == false){$("#tableDisplay").html("<h3>Error. Please generate array of objects first.</h3>")}
+			else {
+				let table = '<table class="table table-striped"><thead><tr>' +
+							'<th>Local Name</th><th>Local DOB</th><th>Local Age</th><th>Local Zodiac</th>' +
+							'</tr></thead><tbody>'
+			
+			   for (var i = 0; i < objectArray.length; i++) {
+					let obj = objectArray[i]
+					table += '<tr><td>' +  countryName(obj.name, obj.surname, obj.country) + '</td>' 
+						  + '<td>' + localBDate(obj.birthMonth, obj.birthDay, obj.birthYear, obj.country) + '</td>'
+						  + '<td>' + solarAge(obj.birthMonth, obj.birthDay, obj.birthYear, obj.country) + '</td>'
+						  + '<td>' + calcZodiac(obj.birthMonth, obj.birthDay, obj.birthYear, obj.country) + '</td></tr>'
+				}
+
+				table += '</tbody></table>'
+				$("#tableDisplay").html(table)
+			}
+        }
+    </script>
+</body>
+</html>
